@@ -55,12 +55,15 @@ header {
 }
 
 header img {
-  width: 280px;
-  height: 280px;
-  border-radius: 30px;
+  width: 350px;
+  height: 350px;
   object-fit: cover;
+  border-radius: 30px;
   border: 3px solid #38bdf8;
-  transition: 0.4s;
+  image-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  transform: translateZ(0);
+  transition: 0.3s;
 }
 
 header img:hover {
@@ -108,13 +111,13 @@ section {
 }
 
 .logos img {
-  height: 55px;
+  height: 95px;
   object-fit: contain;
   transition: 0.3s;
 }
 
 .logos img:hover {
-  transform: scale(1.1);
+  transform: scale(1.15);
 }
 
 /* CARD */
@@ -140,6 +143,9 @@ iframe {
   border-radius:14px;
   margin-top:15px;
   border:none;
+}
+.contact {
+  text-align: center;
 }
 
 /* RESPONSIVE */
@@ -247,7 +253,7 @@ iframe {
 
 <!-- CONTACT -->
 <section>
-  <div class="container">
+  <div class="container contact">
     <h2>📩 Контакты</h2>
     <p>Email: T.Tuibekov@kmge.kz</p>
     <p>Tel: +7 (771) 203 89 75</p>
