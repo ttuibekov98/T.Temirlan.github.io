@@ -8,256 +8,233 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
+/* ===================== RESET ===================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-  html {
-    scroll-behavior: smooth;
-  }
+html {
+  scroll-behavior: smooth;
+}
 
-  body {
-    font-family: 'Inter', sans-serif;
-    background: #0b1220;
-    color: #ffffff;
-    overflow-x: hidden;
-  }
+body {
+  font-family: 'Inter', sans-serif;
+  background: radial-gradient(circle at top, #0f172a, #050814);
+  color: #fff;
+  overflow-x: hidden;
+}
 
-  body::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-    background:
-      radial-gradient(circle at 20% 20%, rgba(56, 189, 248, 0.15), transparent 40%),
-      radial-gradient(circle at 80% 30%, rgba(99, 102, 241, 0.15), transparent 40%),
-      radial-gradient(circle at 50% 80%, rgba(16, 185, 129, 0.10), transparent 40%);
-    z-index: -1;
-  }
+/* ===================== CONTAINER ===================== */
+.container {
+  width: min(95%, 1500px);
+  margin: 0 auto;
+}
 
-  .container {
-    width: min(97%, 1600px);
-    margin: 0 auto;
-  }
+.section {
+  padding: 90px 0;
+}
 
-  .section {
-    padding: 90px 0;
-  }
+/* ===================== CARD (PREMIUM GLASS + GLOW) ===================== */
+.card {
+  position: relative;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(18px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 22px;
+  padding: 28px;
+  overflow: hidden;
+  transition: 0.4s ease;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.35);
+}
 
-  .card {
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(15px);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 22px;
-    padding: 28px;
-    box-shadow: 0 18px 50px rgba(0, 0, 0, 0.35);
-  }
+/* SaaS glow */
+.card::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  background: radial-gradient(
+    600px circle at var(--x, 50%) var(--y, 50%),
+    rgba(56, 189, 248, 0.25),
+    transparent 40%
+  );
+  opacity: 0;
+  transition: opacity 0.3s;
+}
 
-  h1 {
-    font-size: clamp(36px, 5vw, 56px);
-    line-height: 1.1;
-    margin-top: 24px;
-    margin-bottom: 12px;
-  }
+.card:hover::before {
+  opacity: 1;
+}
 
-  h2 {
-    font-size: clamp(28px, 3vw, 38px);
-    line-height: 1.2;
-    margin-bottom: 18px;
-  }
+.card:hover {
+  transform: translateY(-6px);
+}
 
-  h3 {
-    font-size: 22px;
-    line-height: 1.25;
-    margin-bottom: 16px;
-  }
+/* ===================== TEXT ===================== */
+h1 {
+  font-size: clamp(36px, 5vw, 56px);
+  margin-bottom: 10px;
+}
 
-  p {
-    color: #cbd5e1;
-    line-height: 1.8;
-    font-size: 16px;
-  }
+h2 {
+  font-size: clamp(28px, 3vw, 38px);
+  margin-bottom: 18px;
+}
 
-  .btn {
-    display: inline-block;
-    margin: 10px 10px 0 10px;
-    padding: 12px 24px;
-    background: #38bdf8;
-    color: #08111f;
-    border-radius: 12px;
-    text-decoration: none;
-    font-weight: 700;
-    transition: 0.25s ease;
-  }
+h3 {
+  margin-bottom: 12px;
+}
 
-  .btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 12px 24px rgba(56, 189, 248, 0.25);
-  }
+p {
+  color: #cbd5e1;
+  line-height: 1.8;
+}
 
-  /* HERO */
-  header {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 40px 20px;
-  }
+/* ===================== BUTTON ===================== */
+.btn {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 12px 22px;
+  background: #38bdf8;
+  color: #08111f;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: 700;
+  transition: 0.3s;
+}
 
-  .hero-content {
-    max-width: 1100px;
-    margin: 0 auto;
-  }
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(56,189,248,0.3);
+}
 
-  .hero-content img {
-    width: 350px;
-    height: 350px;
-    object-fit: cover;
-    border-radius: 30px;
-    border: 3px solid #38bdf8;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
-    transition: 0.3s ease;
-    display: block;
-    margin: 0 auto;
-  }
+/* ===================== HERO ===================== */
+header {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
 
-  .hero-content img:hover {
-    transform: scale(1.03);
-  }
+.hero-content img {
+  width: 280px;
+  height: 280px;
+  border-radius: 28px;
+  border: 3px solid #38bdf8;
+  object-fit: cover;
+  margin-bottom: 15px;
+  transition: 0.3s;
+}
 
-  .hero-subtitle {
-    margin-top: 8px;
-    font-size: 18px;
-    color: #94a3b8;
-  }
+.hero-content img:hover {
+  transform: scale(1.05);
+}
 
-  .hero-actions {
-    margin-top: 18px;
-  }
+.hero-subtitle {
+  color: #94a3b8;
+}
 
-  /* ABOUT */
-  .about-grid {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: 32px;
-    align-items: stretch;
-  }
+/* ===================== ABOUT BULLETS (PREMIUM) ===================== */
+.about-card ul {
+  list-style: none;
+  margin-top: 15px;
+}
 
-  .about-card p {
-    margin-bottom: 14px;
-  }
+.about-card li {
+  position: relative;
+  padding-left: 26px;
+  margin-bottom: 12px;
+  color: #cbd5e1;
+}
 
-  .about-card p:last-child {
-    margin-bottom: 0;
-  }
+.about-card li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 8px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #38bdf8, #6366f1);
+  box-shadow: 0 0 12px rgba(56,189,248,0.6);
+}
 
-  .skills-card p {
-    margin-bottom: 12px;
-  }
-
-  .skills-card p:last-child {
-    margin-bottom: 0;
-  }
-
+/* ===================== LOGOS (APPLE STYLE ANIMATION) ===================== */
 .logos-section {
   display: grid;
-  grid-template-columns: repeat(5, 1fr); /* 5 логотипов */
-  gap: 30px;
-  width: 100%;
-  margin-top: 40px;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 40px;
+  margin-top: 50px;
   align-items: center;
+}
+
+@keyframes floatUp {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .logos-section img {
   width: 100%;
-  height: 100px;
+  max-width: 220px;
+  height: 140px;
   object-fit: contain;
+  margin: 0 auto;
+  display: block;
+
+  opacity: 0;
+  animation: floatUp 0.8s ease forwards;
   transition: 0.3s;
 }
 
 .logos-section img:hover {
-  transform: scale(1.1);
+  transform: scale(1.12);
+  filter: drop-shadow(0 10px 25px rgba(56,189,248,0.25));
 }
-  /* PROJECTS */
+
+.logos-section img:nth-child(1) { animation-delay: 0.1s; }
+.logos-section img:nth-child(2) { animation-delay: 0.2s; }
+.logos-section img:nth-child(3) { animation-delay: 0.3s; }
+.logos-section img:nth-child(4) { animation-delay: 0.4s; }
+.logos-section img:nth-child(5) { animation-delay: 0.5s; }
+
+/* ===================== PROJECT GRID ===================== */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px;
+}
+
+iframe {
+  width: 100%;
+  height: 450px;
+  border: none;
+  border-radius: 14px;
+  margin-top: 15px;
+}
+
+/* ===================== CONTACT ===================== */
+.contact {
+  text-align: center;
+}
+
+/* ===================== RESPONSIVE ===================== */
+@media (max-width: 900px) {
   .projects-grid {
-    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .logos-section {
     grid-template-columns: repeat(2, 1fr);
-    gap: 30px;
-    margin-top: 22px;
   }
-
-  .project-card p {
-    margin-bottom: 12px;
-  }
-
-  .project-card p:last-child {
-    margin-bottom: 0;
-  }
-
-  .project-card b {
-    color: #38bdf8;
-  }
-
-  .project-card iframe {
-    width: 100%;
-    height: 470px;
-    border: none;
-    border-radius: 16px;
-    margin-top: 16px;
-    display: block;
-  }
-
-  /* CONTACTS */
-  .contact {
-    text-align: center;
-  }
-
-  .contact p {
-    margin-bottom: 10px;
-  }
-
-  /* RESPONSIVE */
-  @media (max-width: 980px) {
-    .about-grid {
-      grid-template-columns: 1fr;
-    }
-
-    .projects-grid {
-      grid-template-columns: 1fr;
-    }
-
-    .hero-content img {
-      width: 260px;
-      height: 260px;
-    }
-
-    .logos-section img {
-      height: 62px;
-    }
-  }
-
-  @media (max-width: 600px) {
-    .section {
-      padding: 70px 0;
-    }
-
-    .hero-content img {
-      width: 220px;
-      height: 220px;
-    }
-
-    .btn {
-      display: block;
-      margin: 10px auto 0 auto;
-      width: fit-content;
-    }
-
-    .project-card iframe {
-      height: 360px;
-    }
-  }
+}
 </style>
 </head>
 
@@ -265,29 +242,33 @@
 
 <header>
   <div class="container hero-content">
-    <img src="your-photo.jpg" alt="Фото Темирлана Туйбекова">
+    <img src="your-photo.jpg" alt="photo">
     <h1>Туйбеков Темирлан</h1>
-    <p class="hero-subtitle">Аналитик данных | Разработчик Power BI | Бизнес-аналитика в нефтегазовой отрасли</p>
+    <p class="hero-subtitle">Data Analyst | Power BI Developer | BI in Oil & Gas</p>
 
-    <div class="hero-actions">
-      <a class="btn" href="#projects">📊 Мои проекты</a>
-      <a class="btn" href="Tuibekov Temirlan Resume 2026.pdf" download>📄 Скачать резюме</a>
-    </div>
+    <a class="btn" href="#projects">📊 Проекты</a>
+    <a class="btn" href="Tuibekov Temirlan Resume 2026.pdf" download>📄 Резюме</a>
   </div>
 </header>
 
-<section class="section" id="about">
+<section class="section">
   <div class="container">
-    <div class="about-grid">
-      <div class="card about-card">
-        <h2>👨‍💻 Обо мне</h2>
-        <p>Data Analyst & BI Developer с опытом реализации аналитических решений для крупных производственных компаний. Специализируюсь на разработке управленческих дашбордов, построении KPI-систем и трансформации данных в прикладные инсайты для повышения операционной эффективности и поддержки стратегических решений.</p>
-        <p> <li> • Обеспечиваю выявление узких мест в бизнес- и производственных процессах, повышение прозрачности данных и внедрение подходов data-driven управления. <li> </p>
-        <p> <li> • Сочетаю аналитическую экспертизу, визуализацию и глубокое понимание бизнес-процессов для достижения измеримых результатов.<li> </p>
-        <p> <li> • Участвую в проектах цифровизации и внедрения data-driven подхода на крупных нефтегазовых проектах.<li> </p>
-      </div>
 
-      <div class="card skills-card">
+    <div class="card about-card">
+      <h2>👨‍💻 Обо мне</h2>
+
+      <p>Data Analyst & BI Developer с опытом реализации аналитических решений для крупных производственных компаний. Специализируюсь на разработке управленческих дашбордов, построении KPI-систем и трансформации данных в прикладные инсайты для повышения операционной эффективности и поддержки стратегических решений.</p>
+
+      <ul>
+        <li>Обеспечиваю выявление узких мест в бизнес- и производственных процессах, повышение прозрачности данных и внедрение подходов data-driven управления. </li>
+        <li>Сочетаю аналитическую экспертизу, визуализацию и глубокое понимание бизнес-процессов для достижения измеримых результатов.</li>
+        <li>Участвую в проектах цифровизации и внедрения data-driven подхода на крупных нефтегазовых проектах.</li>
+        <li>Работа с нефтегазовыми digital проектами</li>
+      </ul>
+
+      <p>Фокус на data-driven подход и повышение эффективности бизнеса.</p>
+    </div>
+<div class="card skills-card">
         <h3>⚙️ Навыки</h3>
         <p> 📊 Power BI Development</p>
         <p> 🧠 Executive Dashboard Design & Performance Management</p>
@@ -300,7 +281,7 @@
       </div>
     </div>
 
-    <div class="logos-section">
+  <div class="logos-section">
       <img src="KMG.png" alt="KMG">
       <img src="KPO.png" alt="KPO">
       <img src="NCOC.png" alt="NCOC">
@@ -310,54 +291,47 @@
   </div>
 </section>
 
+
 <section class="section" id="projects">
   <div class="container">
-    <h2>📊 Мои проекты</h2>
+    <h2>📊 Проекты</h2>
 
     <div class="projects-grid">
-      <div class="card project-card">
+
+      <div class="card">
         <h3>Производственный дашборд СКП</h3>
-        <p><b>Проблема:</b> Отсутствие единой системы мониторинга операционных показателей и разрозненность данных по источникам.</p>
-        <p><b>Решение:</b> Разработан интерактивный дэшборд для консолидации данных и контроля ключевых операционных KPI.</p>
-        <p><b>Результат:</b> Повышена прозрачность операционной деятельности и ускорено выявление отклонений.</p>
-        <iframe src="https://app.powerbi.com/view?r=eyJrIjoiZTJkMzhmODItYmJkNi00ODNjLThkYTQtZTBmMzM3MmEwZGFiIiwidCI6ImQ2MGY1ZTA4LTljNWYtNGFlNi05MzM3LTZjYzJkZGQ0MzgyZSIsImMiOjl9" loading="lazy"></iframe>
+        <p>Мониторинг KPI и операционных показателей</p>
+        <iframe src="https://app.powerbi.com/view?r=example1"></iframe>
       </div>
 
-      <div class="card project-card">
-        <h3>Аналитическая панель КПО</h3>
-        <p><b>Проблема:</b> Ограниченная прозрачность производственных данных и отсутствие оперативного контроля KPI добычи.</p>
-        <p><b>Решение:</b> Создан аналитический дэшборд для мониторинга производственных показателей и анализа эффективности добычи.</p>
-        <p><b>Результат:</b> Улучшена управляемость производственных процессов и повышена эффективность принятия решений.</p>
-        <iframe src="https://app.powerbi.com/view?r=eyJrIjoiYjllODJkNzQtOTljYS00YjNlLWJhZmItMzdlYTNmYzA5ZWFlIiwidCI6ImQ2MGY1ZTA4LTljNWYtNGFlNi05MzM3LTZjYzJkZGQ0MzgyZSIsImMiOjl9" loading="lazy"></iframe>
+      <div class="card">
+        <h3>Финансовая аналитика</h3>
+        <p>Бюджетирование и план-факт анализ</p>
+        <iframe src="https://app.powerbi.com/view?r=example2"></iframe>
       </div>
 
-      <div class="card project-card">
-        <h3>Финансовая аналитика и мониторинг</h3>
-        <p><b>Проблема:</b> Отсутствие единого источника данных и слабый контроль исполнения бюджета.</p>
-        <p><b>Решение:</b> Разработан BI-дэшборд для мониторинга финансовых KPI, анализа отклонений, контроля бюджета и план/факт анализ.</p>
-        <p><b>Результат:</b> Повышена прозрачность финансовых процессов, улучшен контроль за бюджетом и обеспечена поддержка своевременного принятия управленческих решений.</p>
-        <iframe src="https://app.powerbi.com/view?r=eyJrIjoiNjBmMmVlODEtODk4OS00YjQ5LThiMTAtMTE3NzM3ZjQ4OTFkIiwidCI6ImQ2MGY1ZTA4LTljNWYtNGFlNi05MzM3LTZjYzJkZGQ0MzgyZSIsImMiOjl9" loading="lazy"></iframe>
-      </div>
-
-      <div class="card project-card">
-        <h3>Бюджетирование и контроль затрат</h3>
-        <p><b>Проблема:</b> Недостаточный контроль план-факт отклонений и сложность анализа затрат.</p>
-        <p><b>Решение:</b> Разработан дэшборд для анализа бюджета, контроля расходов и визуализации отклонений.</p>
-        <p><b>Результат:</b> Повышена точность бюджетного контроля и прозрачность структуры затрат.</p>
-        <iframe src="https://app.powerbi.com/view?r=eyJrIjoiZjIwYzg0MDctMWFiYS00OTM1LWIwZDctNmMwYjA0ODIxOGM5IiwidCI6ImQ2MGY1ZTA4LTljNWYtNGFlNi05MzM3LTZjYzJkZGQ0MzgyZSIsImMiOjl9" loading="lazy"></iframe>
-      </div>
     </div>
   </div>
 </section>
 
-<section class="section" id="contact">
-  <div class="container contact">
+<section class="section contact">
+  <div class="container">
     <h2>📩 Контакты</h2>
     <p>Email: T.Tuibekov@kmge.kz</p>
     <p>Tel: +7 (771) 203 89 75</p>
-    <a class="btn" href="#">Связаться</a>
+    <a class="btn">Связаться</a>
   </div>
 </section>
+
+<script>
+document.querySelectorAll('.card').forEach(card => {
+  card.addEventListener('mousemove', (e) => {
+    const r = card.getBoundingClientRect();
+    card.style.setProperty('--x', (e.clientX - r.left) + 'px');
+    card.style.setProperty('--y', (e.clientY - r.top) + 'px');
+  });
+});
+</script>
 
 </body>
 </html>
