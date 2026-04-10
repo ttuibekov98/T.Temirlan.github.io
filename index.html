@@ -161,28 +161,25 @@
     margin-bottom: 0;
   }
 
-  .logos-section {
-    margin-top: 28px;
-    padding: 14px 0 0 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 18px;
-    flex-wrap: wrap;
-    width: 100%;
-  }
+.logos-section {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* 5 логотипов */
+  gap: 30px;
+  width: 100%;
+  margin-top: 40px;
+  align-items: center;
+}
 
-  .logos-section img {
-    height: 78px;
-    object-fit: contain;
-    transition: 0.25s ease;
-    border-radius: 10px;
-  }
+.logos-section img {
+  width: 100%;
+  height: 100px;
+  object-fit: contain;
+  transition: 0.3s;
+}
 
-  .logos-section img:hover {
-    transform: scale(1.08);
-  }
-
+.logos-section img:hover {
+  transform: scale(1.1);
+}
   /* PROJECTS */
   .projects-grid {
     display: grid;
@@ -285,21 +282,21 @@
       <div class="card about-card">
         <h2>👨‍💻 Обо мне</h2>
         <p>Data Analyst & BI Developer с опытом реализации аналитических решений для крупных производственных компаний. Специализируюсь на разработке управленческих дашбордов, построении KPI-систем и трансформации данных в прикладные инсайты для повышения операционной эффективности и поддержки стратегических решений.</p>
-        <p>• Обеспечиваю выявление узких мест в бизнес- и производственных процессах, повышение прозрачности данных и внедрение подходов data-driven управления.</p>
-        <p>• Сочетаю аналитическую экспертизу, визуализацию и глубокое понимание бизнес-процессов для достижения измеримых результатов.</p>
-        <p>• Участвую в проектах цифровизации и внедрения data-driven подхода на крупных нефтегазовых проектах.</p>
+        <p> <li> • Обеспечиваю выявление узких мест в бизнес- и производственных процессах, повышение прозрачности данных и внедрение подходов data-driven управления. <li> </p>
+        <p> <li> • Сочетаю аналитическую экспертизу, визуализацию и глубокое понимание бизнес-процессов для достижения измеримых результатов.<li> </p>
+        <p> <li> • Участвую в проектах цифровизации и внедрения data-driven подхода на крупных нефтегазовых проектах.<li> </p>
       </div>
 
       <div class="card skills-card">
         <h3>⚙️ Навыки</h3>
-        <p>Power BI Development</p>
-        <p>Executive Dashboard Design & Performance Management</p>
-        <p>KPI Framework Development & Business Metrics Alignment</p>
-        <p>Data Modeling & Analytical Architecture</p>
-        <p>Operational & Production Performance Analysis</p>
-        <p>Financial & Cost Efficiency Analysis</p>
-        <p>Data-Driven Decision Support</p>
-        <p>Process Optimization & Continuous Improvement</p>
+        <p> 📊 Power BI Development</p>
+        <p> 🧠 Executive Dashboard Design & Performance Management</p>
+        <p> 📈 KPI Framework Development & Business Metrics Alignment</p>
+        <p> 📊 Data Modeling & Analytical Architecture</p>
+        <p> 🧠 Operational & Production Performance Analysis</p>
+        <p> 📊 Financial & Cost Efficiency Analysis</p>
+        <p> 💾 Data-Driven Decision Support</p>
+        <p> 📈 Process Optimization & Continuous Improvement</p>
       </div>
     </div>
 
