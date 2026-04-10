@@ -21,7 +21,7 @@ html {
 
 body {
   font-family: 'Inter', sans-serif;
-  background: radial-gradient(circle at top, #0f172a, #050814);
+  background: radial-gradient(circle at top, #1e293b 0%, #020617 100%);
   color: #fff;
   overflow-x: hidden;
 }
@@ -226,14 +226,25 @@ iframe {
 }
 
 /* ===================== RESPONSIVE ===================== */
-@media (max-width: 900px) {
-  .projects-grid {
+.about-skills {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+  margin-top: 30px;
+}
+  @media (max-width: 900px) {
+  .about-skills {
     grid-template-columns: 1fr;
   }
+}
 
   .logos-section {
     grid-template-columns: repeat(2, 1fr);
   }
+}
+.project-card p {
+  margin-bottom: 12px;
+  line-height: 1.7;
 }
 </style>
 </head>
@@ -268,6 +279,7 @@ iframe {
 
       <p>Фокус на data-driven подход и повышение эффективности бизнеса.</p>
     </div>
+    </div>
 <div class="card skills-card">
         <h3>⚙️ Навыки</h3>
         <p> 📊 Power BI Development</p>
@@ -280,7 +292,7 @@ iframe {
         <p> 📈 Process Optimization & Continuous Improvement</p>
       </div>
     </div>
-
+</div>
   <div class="logos-section">
       <img src="KMG.png" alt="KMG">
       <img src="KPO.png" alt="KPO">
@@ -349,6 +361,16 @@ document.querySelectorAll('.card').forEach(card => {
     card.style.setProperty('--y', (e.clientY - r.top) + 'px');
   });
 });
+  body::before {
+  content: "";
+  position: fixed;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(56,189,248,0.15), transparent 70%);
+  top: -200px;
+  right: -200px;
+  z-index: -1;
+}
 </script>
 
 </body>
