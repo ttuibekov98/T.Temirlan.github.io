@@ -3,283 +3,357 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Temirlan Analytics Portfolio</title>
+<title>Портфолио Темирлана Туйбекова</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
-* {
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-}
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
 
-html { scroll-behavior:smooth; }
+  html {
+    scroll-behavior: smooth;
+  }
 
-body {
-  font-family:'Inter', sans-serif;
-  background:#0b1220;
-  color:white;
-  overflow-x:hidden;
-}
+  body {
+    font-family: 'Inter', sans-serif;
+    background: #0b1220;
+    color: #ffffff;
+    overflow-x: hidden;
+  }
 
-/* BACKGROUND */
-body::before {
-  content:"";
-  position:fixed;
-  width:100%;
-  height:100%;
-  background:
-    radial-gradient(circle at 20% 20%, rgba(56,189,248,0.15), transparent 40%),
-    radial-gradient(circle at 80% 30%, rgba(99,102,241,0.15), transparent 40%),
-    radial-gradient(circle at 50% 80%, rgba(16,185,129,0.10), transparent 40%);
-  z-index:-1;
-}
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background:
+      radial-gradient(circle at 20% 20%, rgba(56, 189, 248, 0.15), transparent 40%),
+      radial-gradient(circle at 80% 30%, rgba(99, 102, 241, 0.15), transparent 40%),
+      radial-gradient(circle at 50% 80%, rgba(16, 185, 129, 0.10), transparent 40%);
+    z-index: -1;
+  }
 
-/* CONTAINER */
-.container {
-  width:97%;
-  max-width:1600px;
-  margin:auto;
-}
+  .container {
+    width: min(97%, 1600px);
+    margin: 0 auto;
+  }
 
-/* HERO */
-header {
-  min-height:100vh;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-  flex-direction:column;
-  padding:40px 20px;
-}
+  .section {
+    padding: 90px 0;
+  }
 
-header img {
-  width: 350px;
-  height: 350px;
-  object-fit: cover;
-  border-radius: 30px;
-  border: 3px solid #38bdf8;
-  image-rendering: auto;
-  -webkit-font-smoothing: antialiased;
-  transform: translateZ(0);
-  transition: 0.3s;
-}
+  .card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 22px;
+    padding: 28px;
+    box-shadow: 0 18px 50px rgba(0, 0, 0, 0.35);
+  }
 
-header img:hover {
-  transform: scale(1.05);
-}
+  h1 {
+    font-size: clamp(36px, 5vw, 56px);
+    line-height: 1.1;
+    margin-top: 24px;
+    margin-bottom: 12px;
+  }
 
-h1 {font-size:54px;}
-h2 {font-size:34px; margin-bottom:20px;}
+  h2 {
+    font-size: clamp(28px, 3vw, 38px);
+    line-height: 1.2;
+    margin-bottom: 18px;
+  }
 
-p {
-  color:#94a3b8;
-  line-height:1.6;
-}
+  h3 {
+    font-size: 22px;
+    line-height: 1.25;
+    margin-bottom: 16px;
+  }
 
-/* BUTTON */
-.btn {
-  display:inline-block;
-  margin:10px;
-  padding:12px 24px;
-  background:#38bdf8;
-  color:black;
-  border-radius:12px;
-  text-decoration:none;
-  font-weight:700;
-}
+  p {
+    color: #cbd5e1;
+    line-height: 1.8;
+    font-size: 16px;
+  }
 
-/* SECTIONS */
-section {
-  padding:100px 0;
-}
+  .btn {
+    display: inline-block;
+    margin: 10px 10px 0 10px;
+    padding: 12px 24px;
+    background: #38bdf8;
+    color: #08111f;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 700;
+    transition: 0.25s ease;
+  }
 
-/* ABOUT */
-.about {
-.about {
-  display: grid;
-  grid-template-columns: 2fr 1fr; /* левая шире, правая уже */
-  gap: 40px;
-  align-items: start;
-}
+  .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 24px rgba(56, 189, 248, 0.25);
+  }
 
-.about-left p {
-  margin-bottom: 16px;
-  line-height: 1.7;
-}
+  /* HERO */
+  header {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 40px 20px;
+  }
 
-/* логотипы */
-.logos {
-  display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
-  margin-top: 20px;
-}
+  .hero-content {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
 
-.logos img {
-  height: 80px;
-  object-fit: contain;
-  transition: 0.3s;
-}
+  .hero-content img {
+    width: 350px;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 30px;
+    border: 3px solid #38bdf8;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
+    transition: 0.3s ease;
+    display: block;
+    margin: 0 auto;
+  }
 
-.logos img:hover {
-  transform: scale(1.1);
-}
-/* ОТСТУП */
-.card p {
-  margin-bottom:14px;
-  line-height:1.6;
-}
+  .hero-content img:hover {
+    transform: scale(1.03);
+  }
 
-.card p:last-child {
-  margin-bottom:0;
-}
+  .hero-subtitle {
+    margin-top: 8px;
+    font-size: 18px;
+    color: #94a3b8;
+  }
 
-.card b {
-  color:#38bdf8;
-}
+  .hero-actions {
+    margin-top: 18px;
+  }
 
-/* PROJECTS GRID */
-.projects {
-  display:grid;
-  grid-template-columns:repeat(2, 1fr);
-  gap:30px;
-}
+  /* ABOUT */
+  .about-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 32px;
+    align-items: stretch;
+  }
 
-/* iframe */
-iframe {
-  width:100%;
-  height:500px;
-  border-radius:14px;
-  margin-top:15px;
-  border:none;
-}
-.contact {
-  text-align: center;
-}
+  .about-card p {
+    margin-bottom: 14px;
+  }
 
-/* RESPONSIVE */
-@media(max-width:900px){
-  .projects {grid-template-columns:1fr;}
-  .about {grid-template-columns:1fr;}
-  h1 {font-size:36px;}
-}
+  .about-card p:last-child {
+    margin-bottom: 0;
+  }
+
+  .skills-card p {
+    margin-bottom: 12px;
+  }
+
+  .skills-card p:last-child {
+    margin-bottom: 0;
+  }
+
+  .logos-section {
+    margin-top: 28px;
+    padding: 14px 0 0 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 18px;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+
+  .logos-section img {
+    height: 78px;
+    object-fit: contain;
+    transition: 0.25s ease;
+    border-radius: 10px;
+  }
+
+  .logos-section img:hover {
+    transform: scale(1.08);
+  }
+
+  /* PROJECTS */
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    margin-top: 22px;
+  }
+
+  .project-card p {
+    margin-bottom: 12px;
+  }
+
+  .project-card p:last-child {
+    margin-bottom: 0;
+  }
+
+  .project-card b {
+    color: #38bdf8;
+  }
+
+  .project-card iframe {
+    width: 100%;
+    height: 470px;
+    border: none;
+    border-radius: 16px;
+    margin-top: 16px;
+    display: block;
+  }
+
+  /* CONTACTS */
+  .contact {
+    text-align: center;
+  }
+
+  .contact p {
+    margin-bottom: 10px;
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 980px) {
+    .about-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .projects-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .hero-content img {
+      width: 260px;
+      height: 260px;
+    }
+
+    .logos-section img {
+      height: 62px;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .section {
+      padding: 70px 0;
+    }
+
+    .hero-content img {
+      width: 220px;
+      height: 220px;
+    }
+
+    .btn {
+      display: block;
+      margin: 10px auto 0 auto;
+      width: fit-content;
+    }
+
+    .project-card iframe {
+      height: 360px;
+    }
+  }
 </style>
 </head>
 
 <body>
 
-<!-- HERO -->
 <header>
-  <div class="container">
-    <img src="your-photo.jpg">
-
+  <div class="container hero-content">
+    <img src="your-photo.jpg" alt="Фото Темирлана Туйбекова">
     <h1>Туйбеков Темирлан</h1>
-    <p>Data Analyst | Power BI Developer | Business Analytics in Oil & Gas</p>
+    <p class="hero-subtitle">Аналитик данных | Разработчик Power BI | Бизнес-аналитика в нефтегазовой отрасли</p>
 
-    <a class="btn" href="#projects">📊 Мои проекты</a>
-    <a class="btn" href="Tuibekov Temirlan Resume 2026.pdf" download>📄 Скачать резюме</a>
+    <div class="hero-actions">
+      <a class="btn" href="#projects">📊 Мои проекты</a>
+      <a class="btn" href="Tuibekov Temirlan Resume 2026.pdf" download>📄 Скачать резюме</a>
+    </div>
   </div>
 </header>
 
-<!-- ABOUT -->
-<section>
-  <div class="container about">
+<section class="section" id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="card about-card">
+        <h2>👨‍💻 Обо мне</h2>
+        <p>Data Analyst & BI Developer с опытом реализации аналитических решений для крупных производственных компаний. Специализируюсь на разработке управленческих дашбордов, построении KPI-систем и трансформации данных в прикладные инсайты для повышения операционной эффективности и поддержки стратегических решений.</p>
+        <p>• Обеспечиваю выявление узких мест в бизнес- и производственных процессах, повышение прозрачности данных и внедрение подходов data-driven управления.</p>
+        <p>• Сочетаю аналитическую экспертизу, визуализацию и глубокое понимание бизнес-процессов для достижения измеримых результатов.</p>
+        <p>• Участвую в проектах цифровизации и внедрения data-driven подхода на крупных нефтегазовых проектах.</p>
+      </div>
 
-    <!-- ЛЕВАЯ ЧАСТЬ -->
-    <div class="about-left">
-      <h2>👨‍💻 Обо мне</h2>
-
-      <p>
-        Data Analyst & BI Developer с опытом реализации аналитических решений для крупных производственных компаний.
-      </p>
-
-      <p>
-        🔹 Выявление узких мест в бизнес-процессах  
-        🔹 Внедрение data-driven подхода  
-        🔹 Разработка KPI и дашбордов  
-      </p>
-
-      <!-- ЛОГО ПОД ТЕКСТОМ -->
-      <div class="logos">
-        <img src="KMG.png">
-        <img src="KPO.png">
-        <img src="NCOC.png">
-        <img src="Power BI.png">
-        <img src="SQL.png">
+      <div class="card skills-card">
+        <h3>⚙️ Навыки</h3>
+        <p>Power BI Development</p>
+        <p>Executive Dashboard Design & Performance Management</p>
+        <p>KPI Framework Development & Business Metrics Alignment</p>
+        <p>Data Modeling & Analytical Architecture</p>
+        <p>Operational & Production Performance Analysis</p>
+        <p>Financial & Cost Efficiency Analysis</p>
+        <p>Data-Driven Decision Support</p>
+        <p>Process Optimization & Continuous Improvement</p>
       </div>
     </div>
 
-    <!-- ПРАВАЯ ЧАСТЬ -->
-    <div class="card">
-      <h3>⚙️ Навыки</h3>
-      <p>Power BI Development</p>
-      <p>Data Modeling</p>
-      <p>KPI Dashboards</p>
-      <p>Business Analysis</p>
-      <p>SQL</p>
+    <div class="logos-section">
+      <img src="KMG.png" alt="KMG">
+      <img src="KPO.png" alt="KPO">
+      <img src="NCOC.png" alt="NCOC">
+      <img src="Power BI.png" alt="Power BI">
+      <img src="SQL.png" alt="SQL">
     </div>
-
   </div>
 </section>
 
-<!-- PROJECTS -->
-<section id="projects">
+<section class="section" id="projects">
   <div class="container">
     <h2>📊 Мои проекты</h2>
 
-    <div class="projects">
-
-      <div class="card">
+    <div class="projects-grid">
+      <div class="card project-card">
         <h3>Производственный дашборд СКП</h3>
-        
         <p><b>Проблема:</b> Отсутствие единой системы мониторинга операционных показателей и разрозненность данных по источникам.</p>
-        
         <p><b>Решение:</b> Разработан интерактивный дэшборд для консолидации данных и контроля ключевых операционных KPI.</p>
-        
         <p><b>Результат:</b> Повышена прозрачность операционной деятельности и ускорено выявление отклонений.</p>
-        <iframe src="https://app.powerbi.com/view?r=eyJrIjoiZTJkMzhmODItYmJkNi00ODNjLThkYTQtZTBmMzM3MmEwZGFiIiwidCI6ImQ2MGY1ZTA4LTljNWYtNGFlNi05MzM3LTZjYzJkZGQ0MzgyZSIsImMiOjl9"></iframe>
+        <iframe src="https://app.powerbi.com/view?r=eyJrIjoiZTJkMzhmODItYmJkNi00ODNjLThkYTQtZTBmMzM3MmEwZGFiIiwidCI6ImQ2MGY1ZTA4LTljNWYtNGFlNi05MzM3LTZjYzJkZGQ0MzgyZSIsImMiOjl9" loading="lazy"></iframe>
       </div>
 
-      <div class="card">
+      <div class="card project-card">
         <h3>Аналитическая панель КПО</h3>
-        
         <p><b>Проблема:</b> Ограниченная прозрачность производственных данных и отсутствие оперативного контроля KPI добычи.</p>
-        
         <p><b>Решение:</b> Создан аналитический дэшборд для мониторинга производственных показателей и анализа эффективности добычи.</p>
-        
         <p><b>Результат:</b> Улучшена управляемость производственных процессов и повышена эффективность принятия решений.</p>
-        <iframe src="https://app.powerbi.com/view?r=eyJrIjoiYjllODJkNzQtOTljYS00YjNlLWJhZmItMzdlYTNmYzA5ZWFlIiwidCI6ImQ2MGY1ZTA4LTljNWYtNGFlNi05MzM3LTZjYzJkZGQ0MzgyZSIsImMiOjl9"></iframe>
+        <iframe src="https://app.powerbi.com/view?r=eyJrIjoiYjllODJkNzQtOTljYS00YjNlLWJhZmItMzdlYTNmYzA5ZWFlIiwidCI6ImQ2MGY1ZTA4LTljNWYtNGFlNi05MzM3LTZjYzJkZGQ0MzgyZSIsImMiOjl9" loading="lazy"></iframe>
       </div>
 
-      <div class="card">
+      <div class="card project-card">
         <h3>Финансовая аналитика и мониторинг</h3>
-        
         <p><b>Проблема:</b> Отсутствие единого источника данных и слабый контроль исполнения бюджета.</p>
-        
         <p><b>Решение:</b> Разработан BI-дэшборд для мониторинга финансовых KPI, анализа отклонений, контроля бюджета и план/факт анализ.</p>
-        
-        <p><b>Результат:</b> прозрачность финансов.</p>
-        <iframe src="https://app.powerbi.com/view?r=eyJrIjoiNjBmMmVlODEtODk4OS00YjQ5LThiMTAtMTE3NzM3ZjQ4OTFkIiwidCI6ImQ2MGY1ZTA4LTljNWYtNGFlNi05MzM3LTZjYzJkZGQ0MzgyZSIsImMiOjl9"></iframe>
+        <p><b>Результат:</b> Повышена прозрачность финансовых процессов, улучшен контроль за бюджетом и обеспечена поддержка своевременного принятия управленческих решений.</p>
+        <iframe src="https://app.powerbi.com/view?r=eyJrIjoiNjBmMmVlODEtODk4OS00YjQ5LThiMTAtMTE3NzM3ZjQ4OTFkIiwidCI6ImQ2MGY1ZTA4LTljNWYtNGFlNi05MzM3LTZjYzJkZGQ0MzgyZSIsImMiOjl9" loading="lazy"></iframe>
       </div>
 
-      <div class="card">
+      <div class="card project-card">
         <h3>Бюджетирование и контроль затрат</h3>
-        <p><b>Проблема:</b> недостаточный контроль план-факт отклонений и сложность анализа затрат.</p>
-        
-        <p><b>Решение:</b> разработан дэшборд для анализа бюджета, контроля расходов и визуализации отклонений.</p>
-        
-        <p><b>Результат:</b> повышена точность бюджетного контроля и прозрачность структуры затрат.</p>
-        <iframe src="https://app.powerbi.com/view?r=eyJrIjoiZjIwYzg0MDctMWFiYS00OTM1LWIwZDctNmMwYjA0ODIxOGM5IiwidCI6ImQ2MGY1ZTA4LTljNWYtNGFlNi05MzM3LTZjYzJkZGQ0MzgyZSIsImMiOjl9"></iframe>
+        <p><b>Проблема:</b> Недостаточный контроль план-факт отклонений и сложность анализа затрат.</p>
+        <p><b>Решение:</b> Разработан дэшборд для анализа бюджета, контроля расходов и визуализации отклонений.</p>
+        <p><b>Результат:</b> Повышена точность бюджетного контроля и прозрачность структуры затрат.</p>
+        <iframe src="https://app.powerbi.com/view?r=eyJrIjoiZjIwYzg0MDctMWFiYS00OTM1LWIwZDctNmMwYjA0ODIxOGM5IiwidCI6ImQ2MGY1ZTA4LTljNWYtNGFlNi05MzM3LTZjYzJkZGQ0MzgyZSIsImMiOjl9" loading="lazy"></iframe>
       </div>
-
     </div>
   </div>
 </section>
 
-<!-- CONTACT -->
-<section>
+<section class="section" id="contact">
   <div class="container contact">
     <h2>📩 Контакты</h2>
     <p>Email: T.Tuibekov@kmge.kz</p>
